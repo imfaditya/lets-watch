@@ -1,9 +1,9 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: './src/js/app.js',
   output: {
-    filename: 'main.js',
+    filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
@@ -14,10 +14,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(scss)$/,
+        test: /\.(png|svg|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /bootstrap.scss/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'to-string-loader'
           },
           {
             loader: 'css-loader'
@@ -38,7 +42,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.min.css$/,
+        test: /global.css/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        exclude: /global.css/,
         use: [
           {
             loader: 'to-string-loader'
@@ -48,18 +64,6 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.css$/,
-        exclude: /\.min.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          }
-        ]
-      }
     ]
   }
 }

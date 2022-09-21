@@ -1,0 +1,14 @@
+.list{
+  background-color: rgb(37, 37, 37);
+}
+
+.card{
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+
+.rating-wrapper > img{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}

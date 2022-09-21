@@ -1,4 +1,6 @@
-import css from '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from '../../../scss/bootstrap.scss';
+import css from './movie-list.css';
+import imgStar from '../../../assets/star.png';
 
 class MovieList extends HTMLElement{
   constructor(){
@@ -14,17 +16,20 @@ class MovieList extends HTMLElement{
   render(){    
     const wrapper = document.createElement('div');
     const style = document.createElement('style');
+    style.textContent = `${bootstrap + css}`;
     wrapper.setAttribute('class', 'row container mx-auto mb-4');
-    style.textContent = `${css}`;
 
     this._movies.forEach(movie => {
       const item = `
-        <div class="col-lg-2 col-md-4 col-6 mt-4">
+        <div class="list col-lg-2 col-md-4 col-6 mt-4">
           <div class="card h-100">
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="movie-item">
-            <div class="card-body">
-              <h5 class="card-title">${movie.original_title}</h5>
-              <p class="card-text">${movie.vote_average}</p>
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h6 class="card-title">${movie.title}</h5>
+              <div class="rating-wrapper d-flex align-items-center">
+                <img src="${imgStar}" alt="star-rating">
+                <p class="card-text">${movie.vote_average}</p>
+              </div>
             </div>
           </div>
         </div>  

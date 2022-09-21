@@ -1,0 +1,12 @@
+.navbar{
+  background-color: rgb(37, 37, 37) !important;
+  color: red !important;
+}
+
+.navbar img{
+  width: 180px;
+}
+
+.jumbotron{
+  background: url(../../../assets/jumbotronBg.png);
+}
