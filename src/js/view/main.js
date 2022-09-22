@@ -4,7 +4,6 @@ import '../components/footer/footer.js';
 import '../components/load-button/load-button.js';
 import DataMovies from '../data/data-movies.js';
 
-
 const main = () =>{
   let page = 1;
   const movieList = document.querySelector('movie-list');
@@ -14,6 +13,9 @@ const main = () =>{
     try{
       const movies = await DataMovies.getData(page);
       render(movies);
+      if(page === 500){
+        loadButton.remove();
+      }
     }catch{
     }
   };
@@ -23,8 +25,10 @@ const main = () =>{
   };
 
   const loadButtonClicked = () => {
-    page++;
-    loadData();
+    if(page < 500){
+      page++;
+      loadData();
+    }
   };
 
   loadButton.clickEvent = loadButtonClicked;

@@ -10,6 +10,7 @@ class LoadButton extends HTMLElement{
   set clickEvent(event){
     this._event = event;
     this.render();
+    console.log(this._event);
   }
 
   render(){
