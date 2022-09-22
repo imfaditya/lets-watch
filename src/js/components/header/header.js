@@ -13,7 +13,6 @@ class HeaderBar extends HTMLElement{
   }
 
   render(){
-    console.log(bootstrap);
     const style = document.createElement('style');
     style.textContent = `${bootstrap + css}`;
     const content = document.createElement('header');

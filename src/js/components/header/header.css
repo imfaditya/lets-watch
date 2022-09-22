@@ -1,6 +1,5 @@
 .navbar{
   background-color: rgb(37, 37, 37) !important;
-  color: red !important;
 }
 
 .navbar img{
@@ -8,5 +7,9 @@
 }
 
 .jumbotron{
-  background: url(../../../assets/jumbotronBg.png);
+  background : url('../../../assets/jumbotronBg.png')
+}
+
+h1{
+  color: rgb(20, 20, 20);
 }

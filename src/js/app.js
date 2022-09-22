@@ -1,4 +1,4 @@
-import main from './main/main.js';
+import main from './view/main.js';
 import '../css/global.css';
 
 // // Import all of Bootstrap's JS
