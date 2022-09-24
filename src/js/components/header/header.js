@@ -1,18 +1,18 @@
-import logoWhite from '../../../assets/logo-white.svg'
+import logoWhite from '../../../assets/logo-white.svg';
 import bootstrap from '../../../scss/bootstrap.scss';
 import css from './header.css';
 
-class HeaderBar extends HTMLElement{
-  constructor(){
+class HeaderBar extends HTMLElement {
+  constructor() {
     super();
-    this.shadowDOM = this.attachShadow({mode:'open'});
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
+  render() {
     const style = document.createElement('style');
     style.textContent = `${bootstrap + css}`;
     const content = document.createElement('header');
@@ -34,7 +34,6 @@ class HeaderBar extends HTMLElement{
 
     this.shadowDOM.appendChild(style);
     this.shadowDOM.appendChild(content);
-    
   }
 }
 

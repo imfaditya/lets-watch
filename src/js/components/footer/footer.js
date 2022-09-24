@@ -1,16 +1,16 @@
 import css from './footer.css';
 
-class FooterBar extends HTMLElement{
-  constructor(){
+class FooterBar extends HTMLElement {
+  constructor() {
     super();
-    this.shadowDOM = this.attachShadow({mode:'open'});
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
+  render() {
     const style = document.createElement('style');
     style.textContent = `${css}`;
     const content = document.createElement('footer');
@@ -24,7 +24,6 @@ class FooterBar extends HTMLElement{
 
     this.shadowDOM.appendChild(style);
     this.shadowDOM.appendChild(content);
-    
   }
 }
 

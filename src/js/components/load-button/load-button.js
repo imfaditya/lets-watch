@@ -1,19 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 import bootstrap from '../../../scss/bootstrap.scss';
 import css from './load-button.css';
 
-class LoadButton extends HTMLElement{
-  constructor(){
+class LoadButton extends HTMLElement {
+  constructor() {
     super();
-    this.shadowDOM = this.attachShadow({mode:'open'});
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
-  set clickEvent(event){
+  set clickEvent(event) {
     this._event = event;
     this.render();
-    console.log(this._event);
   }
 
-  render(){
+  render() {
     const style = document.createElement('style');
     style.textContent = `${bootstrap + css}`;
 
@@ -24,7 +24,7 @@ class LoadButton extends HTMLElement{
         <button class="btn btn-primary btn-load" type="button">Load More</button>
       </div>
     </div>
-    `
+    `;
 
     this.shadowDOM.querySelector('.btn-load').addEventListener('click', this._event);
   }
